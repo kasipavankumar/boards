@@ -1,7 +1,7 @@
 --- 
 before_install:
   - "cd .."
-  - "python -m pip install --user virtualenv"
+  - "python -m pip install virtualenv"
   - "virtualenv venv"
   - "source venv/bin/activate"
 
