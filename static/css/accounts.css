@@ -1,0 +1,7 @@
+body {
+    background-image: url(../images/bg-pattern.png);
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
