@@ -21,7 +21,7 @@ class PasswordResetTests(TestCase):
     # Test view function.
     def test_view_function(self):
         view = resolve('/reset/')
-        self.assertNotEquals(
+        self.assertEquals(
             view.func.view_class,
             auth_views.PasswordResetView
         )
@@ -79,7 +79,7 @@ class PasswordResetDoneTests(TestCase):
     # Test view function.
     def test_view_function(self):
         view = resolve('/reset/done/')
-        self.assertNotEquals(
+        self.assertEquals(
             view.func.view_class,
             auth_views.PasswordResetDoneView
         )

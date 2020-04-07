@@ -79,7 +79,7 @@ urlpatterns = [
 
     # Topic view route.
     re_path(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/$', 
-        views.topic_posts,
+        views.PostListView.as_view(),
         name='topic_posts'
     ),
 
