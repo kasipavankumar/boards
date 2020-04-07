@@ -1,8 +1,9 @@
 --- 
-before_install: 
+before_install:
   - "cd .."
-  - "virtualenv ."
-  - ./scripts/activate
+  - "python -m pip install --user virtualenv"
+  - "virtualenv venv"
+  - "source venv/bin/activate"
 
 install: 
   - "pip install -r requirements.txt"
