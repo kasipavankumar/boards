@@ -4,6 +4,7 @@ before_install:
   - "python -m pip install virtualenv"
   - "virtualenv venv"
   - "source venv/bin/activate"
+  - "cd boards"
 
 install: 
   - "pip install -r requirements.txt"
