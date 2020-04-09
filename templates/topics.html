@@ -20,46 +20,25 @@
 		</a>
 	</div>
 
-	<div class="table-responsive">
-		<table class="table table-hover">
-			<thead class="thead-dark">
-			<tr>
-				<th>Topic</th>
-				<th>Starter</th>
-				<th>Replies</th>
-				<th>Views</th>
-				<th>Last Update</th>
-			</tr>
-			</thead>
-			<tbody>
-			{% for topic in topics %}
-				{% url 'topic_posts' board.pk topic.pk as topic_url %}
-				<tr>
-				<td>
-					<p class="mb-0">
-						<a href="{{ topic_url }}">
-							{{ topic.subject }}
-						</a>
-					</p>
-					<small class="text-muted">
-						Pages:
-						{% for i in topic.get_page_range %}
-							<a href="{{ topic_url }}?page={{ i }}">{{ i }}</a>
-						{% endfor %}
-						{% if topic.has_many_pages %}
-							... <a href="{{ topic_url }}?page={{ topic.get_page_count }}">Last Page</a>
-						{% endif %}
+	{% for topic in topics %}
+		{% url 'topic_posts' board.pk topic.pk as topic_url %}
+		<div class="list-group mb-2">
+			<div class="list-group-item">
+				<h5 class="mb-1 py-3">
+					<a href="{{ topic_url }}" class="text-decoration-none">
+						{{ topic.subject }}
+					</a>
+				</h5>
+				<div class="d-flex w-100 justify-content-between">
+                    <small>
+						<p>{{ topic.starter.username }}</p>
 					</small>
-				</td>
-				<td class="align-middle">{{ topic.starter.username }}</td>
-				<td class="align-middle">{{ topic.replies }}</td>
-				<td class="align-middle">{{ topic.views }}</td>
-				<td class="align-middle">{{ topic.last_updated|naturaltime }}</td>
-				</tr>
-			{% endfor %}
-			</tbody>
-		</table>
-	</div>
+                    <small>Views: {{ topic.views }}</small>
+                    <small>{{ topic.last_updated|naturaltime }}</small>
+                </div>
+			</div>
+		</div>
+	{% endfor %}
 
 	{% include 'includes/pagination.html' %}
 {% endblock %}
