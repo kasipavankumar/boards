@@ -2,7 +2,7 @@
 
 ## Responsive discussion forums built with Django.
 
-[![Build Status](https://travis-ci.org/code-plus-coffee/boards.svg?branch=master)](https://travis-ci.org/code-plus-coffee/boards)
+[![Build Status](https://travis-ci.org/kasipavankumar/boards.svg?branch=master)](https://travis-ci.org/github/kasipavankumar/boards)
 
 Online discussion forums to discuss about programming & technology related topics. You can create an account and get involved with the discussions.
 
